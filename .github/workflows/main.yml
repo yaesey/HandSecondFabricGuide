@@ -24,9 +24,7 @@ jobs:
           GITHUB_REPO: github.com/yaesey/HandSecondFabricGuide
           
         run: |
-          cd ./public 
-          git init
-          git add .
+          cd ./public && git init && git add .
           git config user.name "yaesey's robot"
           git config user.email "nnqyq@outlook.com"
           git add .
