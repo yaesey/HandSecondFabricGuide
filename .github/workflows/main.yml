@@ -16,7 +16,8 @@ jobs:
 
       - name: Prepare Env #配置 mdbook 环境
         uses: ruby/setup-ruby@v1
-          with: ruby-version: 2.6
+        with: 
+          ruby-version: 2.6
         run: |
           cargo install cargo-update
           cargo install --vers "^0.3" mdbook
