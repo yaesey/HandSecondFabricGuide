@@ -18,12 +18,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with: 
           ruby-version: 2.6
-        run: |
-          cargo install cargo-update
-          cargo install --vers "^0.3" mdbook
         
       - name: Build Book #使用目录下的 mdbook.exe 自动构建
         run: |
+          cargo install cargo-update
+          cargo install --vers "^0.3" mdbook
           mdbook build
         
       - name: Deploy Book #部署 book 到 Github Pages 上面
