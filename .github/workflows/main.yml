@@ -27,7 +27,7 @@ jobs:
         
       - name: Deploy Book #部署 book 到 Github Pages 上面
         env: 
-          GITHUB_REPO: github.com/yaesey/HandSecondFabricGuide
+          GITHUB_REPO: github.com/yaesey/HandSecondFabricGuide.git
           
         run: |
           cd ./book 
