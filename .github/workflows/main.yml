@@ -21,8 +21,8 @@ jobs:
         
       - name: Build Book #使用目录下的 mdbook.exe 自动构建
         run: |
-          cargo install cargo-update
-          cargo install --vers "^0.3" mdbook
+          test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update
+          test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook
           mdbook build
         
       - name: Deploy Book #部署 book 到 Github Pages 上面
@@ -37,4 +37,4 @@ jobs:
           git config user.email "nnqyq@outlook.com"
           git add .
           git commit -m "GitHub Actions Auto Build at $(date +'%Y-%m-%d %H:%M:%S')"
-          git push --force "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" master:master
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@$GITHUB_REPO" master:master
