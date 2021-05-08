@@ -37,4 +37,5 @@ jobs:
           git config user.email "nnqyq@outlook.com"
           git add .
           git commit -m "GitHub Actions Auto Build at $(date +'%Y-%m-%d %H:%M:%S')"
+          git pull "https://@$GITHUB_REPO" master:master
           git push --force "https://${{ secrets.GITHUB_TOKEN }}@$GITHUB_REPO" master:master
