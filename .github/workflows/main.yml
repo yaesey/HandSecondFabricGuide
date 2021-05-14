@@ -22,7 +22,7 @@ jobs:
       - name: Deploy Book #部署 book 到 Github Pages 上面
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
           external_repository: https://github.com/yaesey/HandSecondFabricGuide.git
           user_email: nnqyq@outlook.com
           publish_branch: master
