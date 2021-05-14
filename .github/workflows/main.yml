@@ -23,8 +23,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: https://github.com/yaesey/HandSecondFabricGuide.git
-          user_email: nnqyq@outlook.com
+          external_repository: yaesey/HandSecondFabricGuide
           publish_branch: master
           publish_dir: ./book
           keep_files: true
