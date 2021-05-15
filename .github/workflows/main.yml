@@ -21,8 +21,8 @@ jobs:
 
       - run: mdbook build
 
-      - name: Deploy Book #部署 book 到 Github Pages 上面
+      - name: Deploy Book
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
