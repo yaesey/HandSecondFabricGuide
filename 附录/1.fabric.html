@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>附录A：Fabric环境 - HandSecond Minecraft Fabric Mod</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> README</a></li><li class="chapter-item expanded "><a href="../1.stone/intro.html"><strong aria-hidden="true">2.</strong> 可食用石头</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1.stone/1.first_item.html"><strong aria-hidden="true">2.1.</strong> 注册一个物品</a></li><li class="chapter-item expanded "><a href="../1.stone/2.how_mod_load.html"><strong aria-hidden="true">2.2.</strong> 走马观花：物品是怎么被注册的</a></li><li class="chapter-item expanded "><a href="../1.stone/3.registry.html"><strong aria-hidden="true">2.3.</strong> Registry和它的朋友们</a></li><li class="chapter-item expanded "><a href="../1.stone/4.identifier.html"><strong aria-hidden="true">2.4.</strong> 开门，Identifier的</a></li><li class="chapter-item expanded "><a href="../1.stone/5.more_and_more.html"><strong aria-hidden="true">2.5.</strong> 准备好造世了吗</a></li></ol></li><li class="chapter-item expanded "><a href="../2.world/intro.html"><strong aria-hidden="true">3.</strong> ~~太初有道~~,不，是泰拉有道</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2.world/1.create_world.html"><strong aria-hidden="true">3.1.</strong> 第一天，开天辟地</a></li><li class="chapter-item expanded "><a href="../2.world/2.sea_and_land.html"><strong aria-hidden="true">3.2.</strong> 第二天，造海移山</a></li><li class="chapter-item expanded "><a href="../2.world/3.world_gen.html"><strong aria-hidden="true">3.3.</strong> 第三天，金涛氦浪</a></li></ol></li><li class="chapter-item expanded "><a href="../3.entity/intro.html"><strong aria-hidden="true">4.</strong> 感染生物学和源石病理学</a></li><li class="chapter-item expanded "><a href="../4.render/intro.html"><strong aria-hidden="true">5.</strong> 画  中  人</a></li><li class="chapter-item expanded "><a href="../附录/intro.html"><strong aria-hidden="true">6.</strong> 附录</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../附录/1.fabric.html" class="active"><strong aria-hidden="true">6.1.</strong> 附录A：Fabric环境</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">HandSecond Minecraft Fabric Mod</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="附录afabric-环境"><a class="header" href="#附录afabric-环境">附录A：Fabric 环境</a></h2>
+<p>如果你已经配置好 Fabric 环境并且已经可以在命令提示符运行<code>./gradlew runClient</code>没问题的话，我们来继续深入对 Fabric 环境的了解。</p>
+<p>首先确保你的开发目录下包含下面这些文件夹和文件</p>
+<p>我们用<code>/文件夹</code>来表示当前目录下的一个子目录：</p>
+<pre><code>项目文件：
+    - /gradle
+    - /src
+    - gradlew
+    - gradlew.bat
+    - build.gradle
+    - gradle.properties
+    - setting.gradle
+</code></pre>
+<p>如果你想要把你的 Mod 开源，上面的这些文件是一定要 add 进你的 git 里面的。你可不会想有一天你门口站着一堆怒气冲冲的开发者，你的手机、QQ和邮箱被打爆塞满，只是因为他们无法构建你的项目。</p>
+<p>为了行文方便，我们约定在本教程中：</p>
+<ol>
+<li><code>./</code>表示你的整个项目根目录，就是塞着<code>setting.gradle</code>等等上面提到的文件的目录</li>
+<li><code>[src]</code>表示目录<code>./src/main/java/</code>,一般把你的 Java 代码放在这里</li>
+<li><code>[res]</code>表示目录<code>./src/main/resouces</code>，一般把你 Mod 需要的材质等等资源文件放在这里</li>
+</ol>
+<p>除了<code>[src]</code>和<code>[res]</code>这两个目录之外，我们还需要知道</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../附录/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../附录/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

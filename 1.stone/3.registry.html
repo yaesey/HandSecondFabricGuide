@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Registry和它的朋友们 - HandSecond Minecraft Fabric Mod</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> README</a></li><li class="chapter-item expanded "><a href="../1.stone/intro.html"><strong aria-hidden="true">2.</strong> 可食用石头</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1.stone/1.first_item.html"><strong aria-hidden="true">2.1.</strong> 注册一个物品</a></li><li class="chapter-item expanded "><a href="../1.stone/2.how_mod_load.html"><strong aria-hidden="true">2.2.</strong> 走马观花：物品是怎么被注册的</a></li><li class="chapter-item expanded "><a href="../1.stone/3.registry.html" class="active"><strong aria-hidden="true">2.3.</strong> Registry和它的朋友们</a></li><li class="chapter-item expanded "><a href="../1.stone/4.identifier.html"><strong aria-hidden="true">2.4.</strong> 开门，Identifier的</a></li><li class="chapter-item expanded "><a href="../1.stone/5.more_and_more.html"><strong aria-hidden="true">2.5.</strong> 准备好造世了吗</a></li></ol></li><li class="chapter-item expanded "><a href="../2.world/intro.html"><strong aria-hidden="true">3.</strong> ~~太初有道~~,不，是泰拉有道</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2.world/1.create_world.html"><strong aria-hidden="true">3.1.</strong> 第一天，开天辟地</a></li><li class="chapter-item expanded "><a href="../2.world/2.sea_and_land.html"><strong aria-hidden="true">3.2.</strong> 第二天，造海移山</a></li><li class="chapter-item expanded "><a href="../2.world/3.world_gen.html"><strong aria-hidden="true">3.3.</strong> 第三天，金涛氦浪</a></li></ol></li><li class="chapter-item expanded "><a href="../3.entity/intro.html"><strong aria-hidden="true">4.</strong> 感染生物学和源石病理学</a></li><li class="chapter-item expanded "><a href="../4.render/intro.html"><strong aria-hidden="true">5.</strong> 画  中  人</a></li><li class="chapter-item expanded "><a href="../附录/intro.html"><strong aria-hidden="true">6.</strong> 附录</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../附录/1.fabric.html"><strong aria-hidden="true">6.1.</strong> 附录A：Fabric环境</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">HandSecond Minecraft Fabric Mod</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="registry"><a class="header" href="#registry">Registry</a></h2>
+<p>我们暂且不讨论<code>public static final Item</code>这一段，先看看在<code>onInitializer()</code>中这个<code>Registry.register</code></p>
+<p>这个<code>Registry</code>来头可不一般，几乎你在 Minecraft 里面看到的物品、方块、生物、药水状态等等都可以通过这个注册然后加入到 Minecraft 之中！</p>
+<p>我们看看这个到底可以注册什么？</p>
+<ul>
+<li>
+<p>物品方面</p>
+<p>物品、方块、药水效果和附魔等等，这些都是<code>Registry</code>可以注册的</p>
+</li>
+<li>
+<p>生物方面</p>
+<p>不仅是生物，村民职业、村民卖什么，这些也是它的管辖范围</p>
+</li>
+<li>
+<p>游戏机制</p>
+<p>钓鱼、击杀生物的掉落品，甚至地牢等等野外宝箱里面的物品，这些都是<code>战利品表</code>管辖的，而作为<strong>注册</strong>这个表的<code>Registry</code>，自然也在里面发挥作用</p>
+</li>
+<li>
+<p>其他</p>
+<p>能用<code>Registry</code>注册的东西太多了，生物群系、你在游戏中听到的背景音乐、互动的音效还有流动的水、岩浆等等，这些都是它可以注册的</p>
+</li>
+</ul>
+<p>而这些大多是借助<code>Registry#register()</code>方法的帮助，所以我们懂得用<code>register()</code>注册物品之后，融汇旁通，自然也就会注册游戏的方块、实体 <del>和其他七七八八的玩意</del> 了</p>
+<p>我们观察这段代码</p>
+<pre><code class="language-java">Registry.register(Registry.ITEM,
+                  new Identifier(&quot;Foo&quot;,&quot;Originiums&quot;),
+                  ORIGINIUMS);
+</code></pre>
+<p>第一个参数<code>Registry.ITEM</code>告诉 Minecraft 我们要注册的东西是属于 <strong>物品(Item)</strong> 类型的，如果你要注册方块，就是<code>BLOCK</code>，如果是生物，就是<code>ENTITY_TYPE</code>，以此类推，可以查看<code>Registry</code>源码了解。</p>
+<p>第二个参数是一个<code>Identifier</code>，这个是 Minecraft 的一个重要概念，我们会在接下来的第4节详细谈一谈这个，现在你只需知道这个是告诉 Minecraft 我们要注册的物品叫什么就行了。</p>
+<p>第三个参数是要注册物品的字段，你已经预先定义了。</p>
+<p>我们来融汇旁通一下，笔者找了几个用 Fabric 编写的开源 Mod 源码中注册的实例来看一下，注意，考虑到读者目前的进度，部分代码在引用时做了简化和改造，真正的源码有兴趣的读者可以通过链接查看</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../1.stone/2.how_mod_load.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../1.stone/4.identifier.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../1.stone/2.how_mod_load.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../1.stone/4.identifier.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
