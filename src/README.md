@@ -68,4 +68,6 @@ Fabric 是一个轻量级 Mod 框架，它能允许你编写 Mod，打包之后�
 
 *扩展阅读*
 
-1. Fabric Wiki ，最权威的 Fabric 开发文档，本书很多内容都基于此
+1. [Fabric Wiki](https://fabricmc.net/wiki/doku.php) ，最权威的 Fabric 开发文档，本书很多内容都基于此
+
+2. Head First 系列图书，仿照该系列风格

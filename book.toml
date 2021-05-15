@@ -2,6 +2,5 @@
 authors = ["yaesey"]
 language = "zh-CN"
 multilingual = true
-src = "./"
+src = "./src"
 title = "HandSecond Minecraft Fabric Mod"
-
